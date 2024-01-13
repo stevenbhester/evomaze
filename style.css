@@ -233,7 +233,7 @@ header {
     width: 2px;
     background: inherit;
     transform-origin: bottom;
-    animation: growBranch 2s forwards 4s; /* Further delay the animation */
+    animation: growBranch 2s forwards 6s; /* Further delay the animation */
 }
 
 .branch::before::before::before {
