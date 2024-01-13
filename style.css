@@ -123,3 +123,82 @@ header {
     text-align: center;
     padding: 1em 0;
 }
+.tree {
+    position: relative;
+    height: 150px;
+    width: 100px;
+    margin: 20px auto;
+}
+
+.trunk {
+    position: absolute;
+    bottom: 0;
+    background: #8B4513; /* Brown color */
+    height: 100px;
+    width: 10px;
+    left: 45px; /* Center the trunk in the tree div */
+    animation: growTrunk 2s forwards;
+}
+
+.branch {
+    position: absolute;
+    bottom: 80px; /* Position where branches start */
+    background: #8B4513; /* Brown color */
+    width: 5px;
+    height: 0;
+    transform-origin: bottom;
+    animation: growBranch 2s forwards;
+}
+
+.branch-left {
+    left: 40px;
+    transform: rotate(-45deg);
+    animation-delay: 2s; /* Delay to start after the trunk */
+}
+
+.branch-right {
+    left: 50px;
+    transform: rotate(45deg);
+    animation-delay: 2s; /* Delay to start after the trunk */
+}
+
+.leaf {
+    position: absolute;
+    bottom: 80px; /* Position where leaves start */
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: #228B22; /* Green color */
+    animation: growLeaf 2s forwards;
+}
+
+.leaf-left {
+    left: 30px;
+    transform: rotate(-45deg);
+    animation-delay: 4s; /* Delay to start after the branches */
+}
+
+.leaf-right {
+    left: 60px;
+    transform: rotate(45deg);
+    animation-delay: 4s; /* Delay to start after the branches */
+}
+
+@keyframes growTrunk {
+    to {
+        height: 100px;
+    }
+}
+
+@keyframes growBranch {
+    to {
+        height: 30px; /* Final height of branches */
+    }
+}
+
+@keyframes growLeaf {
+    to {
+        width: 20px; /* Final width of leaves */
+        height: 20px; /* Final height of leaves */
+    }
+}
