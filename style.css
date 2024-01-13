@@ -161,7 +161,8 @@ header {
 
 /* First split */
 .branch::before {
-    content: 'before1';
+    content: '';
+    id: 'after1';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -171,7 +172,8 @@ header {
 }
 
 .branch::after {
-    content: 'after1';
+    content: '';
+    id: 'after2';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -180,12 +182,12 @@ header {
     animation: growBranch 2s forwards 2s; /* Delay the animation */
 }
 
-.branch.before1 {
+.branch::before {
     transform: rotate(30deg);
     bottom: 100%;
 }
 
-.branch.after1 {
+.branch::after {
     transform: rotate(-30deg);
     bottom: 100%;
 }
