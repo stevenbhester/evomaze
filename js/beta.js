@@ -1,4 +1,5 @@
 function createBranch(parent, level, angle, length, delay) {
+    console.log(`Maturity phase ${level} entered`);
     // Create a new branch element
     var branch = document.createElement('div');
     branch.className = 'branch';
@@ -31,6 +32,7 @@ function createBranch(parent, level, angle, length, delay) {
     }
 }
 
+console.log("Tree planted");
 // Start growing branches from the trunk
 var trunk = document.getElementById('tree');
 trunk.style.height = '150px'; // Set trunk height
