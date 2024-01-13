@@ -17,11 +17,12 @@ header {
     justify-content: space-between;
     padding: 1em 2em;
     align-items: center;
+    color: #ffffff; /* White text color */
 }
 
 .nav-logo {
     font-weight: bold;
-    color: #333;
+    color: #ffffff; /* Adjusted to white for better visibility */
     font-size: 1.8em;
 }
 
@@ -34,12 +35,26 @@ header {
 
 .nav-links li a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff; /* Adjusted to white for better visibility */
     margin: 0 1em;
     font-weight: bold;
-    background-image: url('nav-link-decoration.png'); /* Uncreated image for decorative purposes */
-    background-repeat: no-repeat;
-    background-position: center bottom;
+    position: relative;
+    padding-bottom: 5px; /* Space for the decoration */
+}
+
+.nav-links li a::after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent url('nav-link-decoration.png') no-repeat center center / contain;
+    transition: width .5s ease, background-color .5s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%; /* Full width on hover */
+    background-color: #5C946E; /* Color transition on hover */
 }
 
 .hero {
