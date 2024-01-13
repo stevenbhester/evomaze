@@ -1,38 +1,20 @@
-function createBranch(level, angle, delay) {
+function growBranch(parent, numLevels, angle, delay) {
+    // Create a new branch element
     var branch = document.createElement('div');
     branch.className = 'branch';
-    branch.style.height = `${33 * level}%`; // Height relative to the level
-    branch.style.transform = `translateX(-50%) rotate(${angle}deg)`;
-    branch.style.animation = `growBranch 2s ${delay}s forwards`;
-    return branch;
-}
+    branch.style.height = `${50 / level}%`; // Decrease height as we go down the levels
+    branch.style.transform = `rotate(${angle}deg)`;
+    branch.style.opacity = '1'; // Make branch visible
+    branch.style.animation = `growBranch 2s ${delay}s forwards`; // Animation with delay
+    parent.appendChild(branch); // Add the new branch to its parent
 
-function growBranches() {
-    var tree = document.getElementById('tree');
-    var level1 = createBranch(1, 0, 0);
-    tree.appendChild(level1);
-
-    // Create branches for level 2
-    for (var i = 0; i < 2; i++) {
-        var angle = (i === 0) ? 30 : -30;
-        var level2 = createBranch(2, angle, 2);
-        level1.appendChild(level2);
-
-        // Create branches for level 3
-        for (var j = 0; j < 2; j++) {
-            angle = (j === 0) ? 20 : -20;
-            var level3 = createBranch(3, angle, 4);
-            level2.appendChild(level3);
-            
-            // Create branches for level 4
-            for (var k = 0; k < 2; k++) {
-                angle = (k === 0) ? 20 : -20;
-                var level4 = createBranch(4, angle, 5);
-                level3.appendChild(level4);
-            }
-        }
+    var currLvl = 1;
+    // If we haven't reached the last level, create two more branches
+    if (currLvl < numLevels {
+        growBranch(branch, currLvl + 1, 20, delay + 2); // Create right branch at next level
+        growBranch(branch, currLvl + 1, -20, delay + 2); // Create left branch at next level
     }
 }
 
-// Start the animation
-growBranches();
+// Start growing branches from the trunk
+growBranch(document.getElementById('tree'), 3, 0, 0);
