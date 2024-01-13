@@ -25,10 +25,6 @@ header {
     font-weight: bold;
     color: #4A4A4A; /* Adjusted to white for better visibility */
     font-size: 1.1em;
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
 }
 
 .nav-links {
@@ -164,8 +160,8 @@ header {
 }
 
 /* First split */
-.branch::before, .branch::after {
-    content: '';
+.branch::before {
+    content: 'before1';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -174,21 +170,31 @@ header {
     animation: growBranch 2s forwards 2s; /* Delay the animation */
 }
 
-.branch::before {
+.branch::after {
+    content: 'after1';
+    position: absolute;
+    height: 50%;
+    width: 2px;
+    background: inherit;
+    transform-origin: bottom;
+    animation: growBranch 2s forwards 2s; /* Delay the animation */
+}
+
+.branch.before1 {
     transform: rotate(30deg);
     bottom: 100%;
 }
 
-.branch::after {
+.branch.after1 {
     transform: rotate(-30deg);
     bottom: 100%;
 }
 
 /* Second split */
-.branch::before::before,
-.branch::before::after,
-.branch::after::before,
-.branch::after::after {
+.branch.before1::before,
+.branch.before1::after,
+.branch.after1::before,
+.branch.after1::after {
     content: '';
     position: absolute;
     height: 50%;
@@ -198,22 +204,22 @@ header {
     animation: growBranch 2s forwards 4s; /* Further delay the animation */
 }
 
-.branch::before::before {
+.branch.before1::before {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.branch::before::after {
+.branch.before1::after {
     transform: rotate(-20deg);
     bottom: 100%;
 }
 
-.branch::after::before {
+.branch.after1::before {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.branch::after::after {
+.branch.after1::after {
     transform: rotate(-20deg);
     bottom: 100%;
 }
