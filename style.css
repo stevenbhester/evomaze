@@ -181,7 +181,11 @@ header {
 }
 
 /* Second split */
-.branchB::before, .branchB::after, .branchA::before, .branchB::after {
+.branch::before::before,
+.branch::before::after,
+.branch::after::before,
+.branch::after::after {
+    content: '';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -190,28 +194,27 @@ header {
     animation: growBranch 2s forwards 4s; /* Further delay the animation */
 }
 
-.branchB::before {
+.branch::before::before {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.branchB::after {
+.branch::before::after {
     transform: rotate(-20deg);
     bottom: 100%;
 }
 
-.branchA::before {
+.branch::after::before {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.branchB::after {
+.branch::after::after {
     transform: rotate(-20deg);
     bottom: 100%;
 }
 
-/* Third Split */
-
+/* Add more nested pseudo-elements for additional splits as needed */
 
 @keyframes growBranch {
     0% {
