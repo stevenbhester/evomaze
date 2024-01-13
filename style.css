@@ -180,18 +180,18 @@ header {
     animation: growBranch 2s forwards 2s; /* Delay the animation */
 }
 
-.branch.b {
+.b {
     transform: rotate(30deg);
     bottom: 100%;
 }
 
-.branch.a {
+.a {
     transform: rotate(-30deg);
     bottom: 100%;
 }
 
 /* Second split */
-.branch.b::before {
+.b::before {
     content: 'bb';
     position: absolute;
     height: 50%;
@@ -202,7 +202,7 @@ header {
 }
 
 
-.branch.b::after {
+.b::after {
     content: 'ba';
     position: absolute;
     height: 50%;
@@ -213,7 +213,7 @@ header {
 }
 
 
-.branch.a::before {
+.a::before {
     content: 'ab';
     position: absolute;
     height: 50%;
@@ -224,7 +224,7 @@ header {
 }
 
 
-.branch.a::after {
+.a::after {
     content: 'aa';
     position: absolute;
     height: 50%;
@@ -234,22 +234,22 @@ header {
     animation: growBranch 2s forwards 4s; /* Further delay the animation */
 }
 
-.branch.bb {
+.bb {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.branch.ba {
+.ba {
     transform: rotate(-20deg);
     bottom: 100%;
 }
 
-.branch.ab {
+.ab {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.branch.aa {
+.aa {
     transform: rotate(-20deg);
     bottom: 100%;
 }
