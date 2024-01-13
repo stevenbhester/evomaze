@@ -148,10 +148,10 @@ header {
 }
 
 .branch, .branchA, .branchB {
-    position: absolute;
+        position: absolute;
     bottom: 0;
     left: 50%;
-    height: 30%;
+    height: 50%;
     width: 2px;
     background: #654321; /* Brown color for branch */
     transform-origin: bottom;
@@ -161,6 +161,7 @@ header {
 
 /* First split */
 .branch::before, .branch::after {
+    content: '';
     position: absolute;
     height: 50%;
     width: 2px;
