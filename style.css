@@ -155,7 +155,7 @@ header {
     position: absolute;
     bottom: 0;
     left: 50%;
-    height: 50%;
+    height: 30%;
     width: 2px;
     background: #654321; /* Brown color for branch */
     transform-origin: bottom;
@@ -218,7 +218,65 @@ header {
     bottom: 100%;
 }
 
-/* Add more nested pseudo-elements for additional splits as needed */
+/* Third Split */
+.branch::before::before::before,
+.branch::before::before::after,
+.branch::before::after::before,
+.branch::before::after::after,
+.branch::after::before::before,
+.branch::after::before::after,
+.branch::after::after::before
+.branch::after::after::after{
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 2px;
+    background: inherit;
+    transform-origin: bottom;
+    animation: growBranch 2s forwards 4s; /* Further delay the animation */
+}
+
+.branch::before::before::before {
+    transform: rotate(20deg);
+    bottom: 100%;
+}
+
+.branch::before::before::after {
+    transform: rotate(20deg);
+    bottom: 100%;
+}
+
+.branch::before::after::before {
+    transform: rotate(-20deg);
+    bottom: 100%;
+}
+
+.branch::before::after::after {
+    transform: rotate(-20deg);
+    bottom: 100%;
+}
+
+.branch::after::before::before {
+    transform: rotate(20deg);
+    bottom: 100%;
+}
+
+.branch::after::before::after {
+    transform: rotate(20deg);
+    bottom: 100%;
+}
+
+.branch::after::after::after {
+    transform: rotate(-20deg);
+    bottom: 100%;
+}
+
+.branch::after::after::before {
+    transform: rotate(-20deg);
+    bottom: 100%;
+}
+
+
 
 @keyframes growBranch {
     0% {
