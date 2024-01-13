@@ -17,7 +17,7 @@ header {
     justify-content: space-between;
     padding: 0.5em 1em;
     align-items: center;
-    background-color: #FEFEFE
+    background-color: #FEFEFE;
     color: #4A4A4A; /* White text color */
 }
 
@@ -225,7 +225,7 @@ header {
 .branch::before::after::after,
 .branch::after::before::before,
 .branch::after::before::after,
-.branch::after::after::before
+.branch::after::after::before,
 .branch::after::after::after{
     content: '';
     position: absolute;
