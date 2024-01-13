@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaxoMaze Game</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>TaxoMaze</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#play">Play Now</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home" class="hero">
-            <h1>Welcome to TaxoMaze</h1>
-            <p>Explore the fascinating world of taxonomy in a challenging puzzle format.</p>
-            <button onclick="location.href='#play'">Play Now</button>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="nav-logo">TaxoMaze</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#play">Play Now</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="hero">
+            <div class="hero-content">
+                <h1>Welcome to TaxoMaze</h1>
+                <p>Where soothing botany meets engaging gameplay. Enter the game's maze and unveil the links between species.</p>
+                <button class="cta-button">Start your exploration</button>
+            </div>
+        </main>
+        <section class="about" id="about">
+            <h2>Engage in Nature's Puzzle</h2>
+            <p>Immerse yourself in an intricate world of living connections. Discover, learn, and challenge your understanding of nature's vast taxonomy.</p>
         </section>
-        <section id="about">
-            <h2>About TaxoMaze</h2>
-            <p>Discover the intricacies of biological classifications and connections.</p>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 TaxoMaze Game. All rights reserved.</p>
-    </footer>
+        <footer class="footer">
+            <p>© 2024 TaxoMaze. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
