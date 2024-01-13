@@ -144,66 +144,87 @@ header {
     left: 45px; /* Center the trunk in the tree div */
     animation: growTrunk 2s forwards;
 }
+.tree {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+}
 
 .branch {
     position: absolute;
-    bottom: 80px; /* Position where branches start */
-    background: #8B4513; /* Brown color */
-    width: 5px;
-    height: 0;
+    bottom: 0;
+    left: 50%;
+    height: 50%;
+    width: 2px;
+    background: #654321; /* Brown color for branch */
     transform-origin: bottom;
+    transform: translateX(-50%);
     animation: growBranch 2s forwards;
 }
 
-.branch-left {
-    left: 40px;
-    transform: rotate(-45deg);
-    animation-delay: 2s; /* Delay to start after the trunk */
-}
-
-.branch-right {
-    left: 50px;
-    transform: rotate(45deg);
-    animation-delay: 2s; /* Delay to start after the trunk */
-}
-
-.leaf {
+/* First split */
+.branch::before, .branch::after {
+    content: '';
     position: absolute;
-    bottom: 80px; /* Position where leaves start */
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: #228B22; /* Green color */
-    animation: growLeaf 2s forwards;
+    height: 50%;
+    width: 2px;
+    background: inherit;
+    transform-origin: bottom;
+    animation: growBranch 2s forwards 2s; /* Delay the animation */
 }
 
-.leaf-left {
-    left: 30px;
-    transform: rotate(-45deg);
-    animation-delay: 4s; /* Delay to start after the branches */
+.branch::before {
+    transform: rotate(30deg);
+    bottom: 100%;
 }
 
-.leaf-right {
-    left: 60px;
-    transform: rotate(45deg);
-    animation-delay: 4s; /* Delay to start after the branches */
+.branch::after {
+    transform: rotate(-30deg);
+    bottom: 100%;
 }
 
-@keyframes growTrunk {
-    to {
-        height: 100px;
-    }
+/* Second split */
+.branch::before::before,
+.branch::before::after,
+.branch::after::before,
+.branch::after::after {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 2px;
+    background: inherit;
+    transform-origin: bottom;
+    animation: growBranch 2s forwards 4s; /* Further delay the animation */
 }
+
+.branch::before::before {
+    transform: rotate(20deg);
+    bottom: 100%;
+}
+
+.branch::before::after {
+    transform: rotate(-20deg);
+    bottom: 100%;
+}
+
+.branch::after::before {
+    transform: rotate(20deg);
+    bottom: 100%;
+}
+
+.branch::after::after {
+    transform: rotate(-20deg);
+    bottom: 100%;
+}
+
+/* Add more nested pseudo-elements for additional splits as needed */
 
 @keyframes growBranch {
-    to {
-        height: 30px; /* Final height of branches */
+    0% {
+        height: 0;
     }
-}
-
-@keyframes growLeaf {
-    to {
-        width: 20px; /* Final width of leaves */
-        height: 20px; /* Final height of leaves */
+    100% {
+        height: 100%;
     }
 }
