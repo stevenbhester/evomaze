@@ -61,8 +61,6 @@ header {
     background: url('hero-background.png') no-repeat center center / cover;
     position: relative;
     height: 100vh;
-    margin-left: 15%;
-    margin-right: 15%
 }
 
 .overlay {
@@ -81,6 +79,8 @@ header {
     color: #333;
     text-align: center;
     padding-top: 15%;
+    margin-left: 15%;
+    margin-right: 15%
 }
 
 .hero-content h1 {
