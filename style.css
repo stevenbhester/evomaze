@@ -161,8 +161,7 @@ header {
 
 /* First split */
 .branch::before {
-    content: '';
-    id: 'after1';
+    content: 'b';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -172,8 +171,7 @@ header {
 }
 
 .branch::after {
-    content: '';
-    id: 'after2';
+    content: 'a';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -182,22 +180,19 @@ header {
     animation: growBranch 2s forwards 2s; /* Delay the animation */
 }
 
-.branch::before {
+.branch.b {
     transform: rotate(30deg);
     bottom: 100%;
 }
 
-.branch::after {
+.branch.a {
     transform: rotate(-30deg);
     bottom: 100%;
 }
 
 /* Second split */
-.branch.before1::before,
-.branch.before1::after,
-.branch.after1::before,
-.branch.after1::after {
-    content: '';
+.branch.b::before {
+    content: 'bb';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -206,22 +201,55 @@ header {
     animation: growBranch 2s forwards 4s; /* Further delay the animation */
 }
 
-.branch.before1::before {
+
+.branch.b::after {
+    content: 'ba';
+    position: absolute;
+    height: 50%;
+    width: 2px;
+    background: inherit;
+    transform-origin: bottom;
+    animation: growBranch 2s forwards 4s; /* Further delay the animation */
+}
+
+
+.branch.a::before {
+    content: 'ab';
+    position: absolute;
+    height: 50%;
+    width: 2px;
+    background: inherit;
+    transform-origin: bottom;
+    animation: growBranch 2s forwards 4s; /* Further delay the animation */
+}
+
+
+.branch.a::after {
+    content: 'aa';
+    position: absolute;
+    height: 50%;
+    width: 2px;
+    background: inherit;
+    transform-origin: bottom;
+    animation: growBranch 2s forwards 4s; /* Further delay the animation */
+}
+
+.branch.bb {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.branch.before1::after {
+.branch.ba {
     transform: rotate(-20deg);
     bottom: 100%;
 }
 
-.branch.after1::before {
+.branch.ab {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.branch.after1::after {
+.branch.aa {
     transform: rotate(-20deg);
     bottom: 100%;
 }
