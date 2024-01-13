@@ -2,7 +2,7 @@ function growBranch(parent, numLevels, angle, delay) {
     // Create a new branch element
     var branch = document.createElement('div');
     branch.className = 'branch';
-    branch.style.height = `${50 / level}%`; // Decrease height as we go down the levels
+    branch.style.height = `${50 / numLevels}%`; // Decrease height as we go down the levels
     branch.style.transform = `rotate(${angle}deg)`;
     branch.style.opacity = '1'; // Make branch visible
     branch.style.animation = `growBranch 2s ${delay}s forwards`; // Animation with delay
