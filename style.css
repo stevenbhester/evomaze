@@ -124,22 +124,6 @@ header {
     text-align: center;
     padding: 1em 0;
 }
-.tree {
-    position: relative;
-    height: 150px;
-    width: 100px;
-    margin: 20px auto;
-}
-
-.trunk {
-    position: absolute;
-    bottom: 0;
-    background: #8B4513; /* Brown color */
-    height: 100px;
-    width: 10px;
-    left: 45px; /* Center the trunk in the tree div */
-    animation: growTrunk 2s forwards;
-}
 
 .tree {
     position: relative;
@@ -155,6 +139,7 @@ header {
     width: 2px;
     background: #654321; /* Brown color for branch */
     transform-origin: bottom;
+    transform: translateX(-50%);
 }
 
 /* Level 1 branch */
@@ -185,21 +170,14 @@ header {
     animation: growBranch 2s forwards 4s; /* Delay the animation for level 3 */
 }
 
-/* Rotate each level 3 branch appropriately */
-.level2:nth-child(1) > .level3 {
-    transform: rotate(20deg);
+.level2:nth-child(1) > .level3:nth-child(1),
+.level2:nth-child(2) > .level3:nth-child(1) {
+    transform: translateX(-50%) rotate(20deg);
 }
 
-.level2:nth-child(1) > .level3:last-child {
-    transform: rotate(-20deg);
-}
-
-.level2:nth-child(2) > .level3 {
-    transform: rotate(20deg);
-}
-
-.level2:nth-child(2) > .level3:last-child {
-    transform: rotate(-20deg);
+.level2:nth-child(1) > .level3:nth-child(2),
+.level2:nth-child(2) > .level3:nth-child(2) {
+    transform: translateX(-50%) rotate(-20deg);
 }
 
 @keyframes growBranch {
