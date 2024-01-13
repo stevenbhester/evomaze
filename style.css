@@ -147,7 +147,7 @@ header {
     margin: 50px auto;
 }
 
-.branch {
+.branch, .branchA, .branchB {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -161,7 +161,6 @@ header {
 
 /* First split */
 .branch::before {
-    content: 'b';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -171,7 +170,6 @@ header {
 }
 
 .branch::after {
-    content: 'a';
     position: absolute;
     height: 50%;
     width: 2px;
@@ -180,19 +178,18 @@ header {
     animation: growBranch 2s forwards 2s; /* Delay the animation */
 }
 
-.b {
+.branch::before {
     transform: rotate(30deg);
     bottom: 100%;
 }
 
-.a {
+.branch::after {
     transform: rotate(-30deg);
     bottom: 100%;
 }
 
 /* Second split */
-.b::before {
-    content: 'bb';
+.branchB::before, .branchB::after, .branchA::before, .branchB::after {
     position: absolute;
     height: 50%;
     width: 2px;
@@ -201,55 +198,22 @@ header {
     animation: growBranch 2s forwards 4s; /* Further delay the animation */
 }
 
-
-.b::after {
-    content: 'ba';
-    position: absolute;
-    height: 50%;
-    width: 2px;
-    background: inherit;
-    transform-origin: bottom;
-    animation: growBranch 2s forwards 4s; /* Further delay the animation */
-}
-
-
-.a::before {
-    content: 'ab';
-    position: absolute;
-    height: 50%;
-    width: 2px;
-    background: inherit;
-    transform-origin: bottom;
-    animation: growBranch 2s forwards 4s; /* Further delay the animation */
-}
-
-
-.a::after {
-    content: 'aa';
-    position: absolute;
-    height: 50%;
-    width: 2px;
-    background: inherit;
-    transform-origin: bottom;
-    animation: growBranch 2s forwards 4s; /* Further delay the animation */
-}
-
-.bb {
+.branchB::before {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.ba {
+.branchB::after {
     transform: rotate(-20deg);
     bottom: 100%;
 }
 
-.ab {
+.branchA::before {
     transform: rotate(20deg);
     bottom: 100%;
 }
 
-.aa {
+.branchB::after {
     transform: rotate(-20deg);
     bottom: 100%;
 }
