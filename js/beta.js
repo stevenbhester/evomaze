@@ -4,7 +4,6 @@ function growBranch(parent, level, angle, delay) {
     branch.className = 'branch';
     branch.style.height = `${50 / level}%`; // Decrease height as we go down the levels
     branch.style.transform = `rotate(${angle}deg)`;
-    branch.style.opacity = '1'; // Make branch visible
     branch.style.animation = `growBranch 2s ${delay}s forwards`; // Animation with delay
     parent.appendChild(branch); // Add the new branch to its parent
 
