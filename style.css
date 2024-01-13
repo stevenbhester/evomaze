@@ -2,90 +2,107 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
+    background-color: #EFEFEF; /* Light Gray Background */
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Header styles */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 .navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 1em 2em;
+    align-items: center;
 }
 
 .nav-logo {
     font-weight: bold;
-    font-size: 1.5em;
     color: #333;
+    font-size: 1.8em;
 }
 
 .nav-links {
     list-style-type: none;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #333;
-    margin-left: 2em;
+    margin: 0 1em;
     font-weight: bold;
+    background-image: url('nav-link-decoration.png'); /* Uncreated image for decorative purposes */
+    background-repeat: no-repeat;
+    background-position: center bottom;
 }
 
-/* Hero styles */
 .hero {
     background: url('hero-background.png') no-repeat center center / cover;
-    color: #fff;
-    padding: 5em 0;
+    position: relative;
+    height: 100vh;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent white overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #333;
     text-align: center;
+    padding-top: 15%;
 }
 
 .hero-content h1 {
     font-size: 3em;
+    margin-bottom: 0.5em;
+    color: #4A4A4A; /* Dark Gray Text */
 }
 
 .hero-content p {
-    margin-top: 0.5em;
     font-size: 1.2em;
+    color: #4A4A4A; /* Dark Gray Text */
+    margin-bottom: 1em;
 }
 
 .cta-button {
-    margin-top: 1em;
     padding: 1em 2em;
-    background-color: #5C946E;
-    color: #fff;
+    background-color: #5C946E; /* Earthy Green Button */
+    color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-radius: 20px;
-    font-size: 1em;
+    border-radius: 50px; /* More rounded corners for elegance */
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 .cta-button:hover {
-    background-color: #425B4F;
+    background-color: #425B4F; /* Darker Green on Hover */
 }
 
-/* About styles */
 .about {
-    padding: 3em 2em;
     background-color: #f4f4f4;
     color: #333;
+    padding: 3em 2em;
 }
 
-/* Footer styles */
-footer {
+.footer {
     background-color: #333;
-    color: #fff;
+    color: white;
     text-align: center;
     padding: 1em 0;
 }
