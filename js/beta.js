@@ -1,18 +1,37 @@
-function growBranch(parent, level, angle, delay) {
+function createBranch(parent, level, angle, length, delay) {
     // Create a new branch element
     var branch = document.createElement('div');
     branch.className = 'branch';
-    branch.style.height = `${50 / level}%`; // Decrease height as we go down the levels
-    branch.style.transform = `rotate(${angle}deg)`;
-    branch.style.animation = `growBranch 2s ${delay}s forwards`; // Animation with delay
-    parent.appendChild(branch); // Add the new branch to its parent
+    branch.style.width = '2px';
+    branch.style.height = '0';
+    branch.style.background = '#654321';
+    branch.style.position = 'absolute';
+    branch.style.bottom = '0';
+    branch.style.left = '50%';
+    branch.style.transformOrigin = 'bottom';
+    branch.style.transform = `translateX(-50%) rotate(${angle}deg)`;
+    parent.appendChild(branch);
+
+    // Animate the branch
+    branch.animate([
+        { height: '0', bottom: '0' },
+        { height: `${length}px`, bottom: `${length}px` }
+    ], {
+        duration: 1000,
+        delay: delay,
+        fill: 'forwards'
+    });
 
     // If we haven't reached the last level, create two more branches
     if (level < 3) {
-        growBranch(branch, level + 1, 20, delay + 2); // Create right branch at next level
-        growBranch(branch, level + 1, -20, delay + 2); // Create left branch at next level
+        setTimeout(() => {
+            createBranch(branch, level + 1, 20, length / 2, 0);
+            createBranch(branch, level + 1, -20, length / 2, 0);
+        }, delay + 1000); // Wait for the current branch to finish growing
     }
 }
 
 // Start growing branches from the trunk
-growBranch(document.getElementById('tree'), 1, 0, 0);
+var trunk = document.getElementById('tree');
+trunk.style.height = '150px'; // Set trunk height
+createBranch(trunk, 1, 0, 150, 0); // Create the first branch
