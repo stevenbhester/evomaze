@@ -17,12 +17,12 @@ header {
     justify-content: space-between;
     padding: 1em 2em;
     align-items: center;
-    color: #ffffff; /* White text color */
+    color: #4A4A4A; /* White text color */
 }
 
 .nav-logo {
     font-weight: bold;
-    color: #ffffff; /* Adjusted to white for better visibility */
+    color: #4A4A4A; /* Adjusted to white for better visibility */
     font-size: 1.8em;
 }
 
@@ -35,7 +35,7 @@ header {
 
 .nav-links li a {
     text-decoration: none;
-    color: #ffffff; /* Adjusted to white for better visibility */
+    color: #4A4A4A; /* Adjusted to white for better visibility */
     margin: 0 1em;
     font-weight: bold;
     position: relative;
