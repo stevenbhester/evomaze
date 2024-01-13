@@ -160,16 +160,7 @@ header {
 }
 
 /* First split */
-.branch::before {
-    position: absolute;
-    height: 50%;
-    width: 2px;
-    background: inherit;
-    transform-origin: bottom;
-    animation: growBranch 2s forwards 2s; /* Delay the animation */
-}
-
-.branch::after {
+.branch::before, .branch::after {
     position: absolute;
     height: 50%;
     width: 2px;
@@ -219,63 +210,6 @@ header {
 }
 
 /* Third Split */
-.branch::before::before::before,
-.branch::before::before::after,
-.branch::before::after::before,
-.branch::before::after::after,
-.branch::after::before::before,
-.branch::after::before::after,
-.branch::after::after::before,
-.branch::after::after::after{
-    content: '';
-    position: absolute;
-    height: 50%;
-    width: 2px;
-    background: inherit;
-    transform-origin: bottom;
-    animation: growBranch 2s forwards 6s; /* Further delay the animation */
-}
-
-.branch::before::before::before {
-    transform: rotate(20deg);
-    bottom: 100%;
-}
-
-.branch::before::before::after {
-    transform: rotate(20deg);
-    bottom: 100%;
-}
-
-.branch::before::after::before {
-    transform: rotate(-20deg);
-    bottom: 100%;
-}
-
-.branch::before::after::after {
-    transform: rotate(-20deg);
-    bottom: 100%;
-}
-
-.branch::after::before::before {
-    transform: rotate(20deg);
-    bottom: 100%;
-}
-
-.branch::after::before::after {
-    transform: rotate(20deg);
-    bottom: 100%;
-}
-
-.branch::after::after::after {
-    transform: rotate(-20deg);
-    bottom: 100%;
-}
-
-.branch::after::after::before {
-    transform: rotate(-20deg);
-    bottom: 100%;
-}
-
 
 
 @keyframes growBranch {
