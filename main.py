@@ -76,7 +76,7 @@ def userGuess():
     #CHANGE THIS FROM GLOBAL IN HERE - BAD PRACTICE
     guess = input("What do you think the organism is? ")
     #check for special characters
-    specialCharacters = "!@#$%^&*()-+?_=,<>/"
+    specialCharacters = "!@#$%^&*()-+?_=,<>/'"
     if any(c in specialCharacters for c in guess):
         print("Please do not inclue any special characters in your guess")
         #for now we will assume that the user follows the rules and doesn't include any special characters the second time
@@ -84,7 +84,7 @@ def userGuess():
         guess = input("What do you think the organism is? ")
         print("Awesome, you guessed", guess, "which is a valid guess")
         guessList.append(guess)
-        return guess, guestList
+        return guess, guessList
     else:
         print("Awesome, you guessed", guess, "which is a valid guess")
         guessList.append(guess)
