@@ -42,13 +42,13 @@ import random
 #Choose an organism from a list of organisms in a list in which all choices are findable on Wikipedia
 organism = ["Cow", "Chicken", "Human"]
 master = random.choice(organism)
-print(master)
+#print(master)
 
 #Display rules to user
-#print("Hello and welcome to the maze of evolution! The object of this game is to guess the organism that the computer chose.")
-#print("Once you guess an organism, the computer will check to see how closely your guess matches the taxonomy of the correct organism")
-#print("You will then get to see the parts of the taxonomy tree that match, and where they are different. With this info, you're ready to make your next guess!")
-#print("Once you get the right organism, make sure to put your name on the leaderboard!")
+print("Hello and welcome to the maze of evolution! The object of this game is to guess the organism that the computer chose.")
+print("Once you guess an organism, the computer will check to see how closely your guess matches the taxonomy of the correct organism")
+print("You will then get to see the parts of the taxonomy tree that match, and where they are different. With this info, you're ready to make your next guess!")
+print("Once you get the right organism, make sure to put your name on the leaderboard!")
 
 
 #Retrieve the taxonomy of the computer's organism
